@@ -58,6 +58,18 @@
         watch: {
           text(value) {
             localStorage.signboardText = value;
+          },
+          fg(value) {
+            localStorage.signboardForegroundColor = value;
+          },
+          bg(value) {
+            localStorage.signboardBackgroundColor = value;
+          },
+          fontFamily(value) {
+            localStorage.signboardFontFamily = value;
+          },
+          fontSize(value) {
+            localStorage.signboardFontSize = value;
           }
         }
       });
