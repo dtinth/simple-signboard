@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>signboard</title>
+    <link rel="stylesheet" href="css.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="settings" v-show="mode === 'settings'">
+        <label>
+          <span>Text: </span>
+          <textarea v-model="text"></textarea>
+        </label>
+        <button @click="mode = 'display'">Show</button>
+      </div>
+      <div
+        class="display"
+        v-show="mode === 'display'"
+        style="font-size: 200px;"
+        @click="mode = 'settings'"
+      >
+        {{text}}
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          text: "Enter something",
+          mode: "settings"
+        }
+      });
+    </script>
+  </body>
+</html>
